@@ -18,7 +18,7 @@ const authReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actionType.AUTH:
       localStorage.setItem('profile', JSON.stringify({ ...action?.data }));
-      return { ...state, authData: action.data, loading: false, errors: action.error.message };
+      return { ...state, authData: action.data, loading: false, errors: action.error };
 
     case actionType.ISLOG:
       return {
@@ -33,7 +33,7 @@ const authReducer = (state = INITIAL_STATE, action) => {
     case actionType.LOGOUT:
       localStorage.clear();
 
-      return { ...state, authData: null, loading: false, errors: action.error.message };
+      return { ...state, authData: null, loading: false, errors: action.error };
     default:
       return state;
   }
