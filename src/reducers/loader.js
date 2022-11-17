@@ -13,7 +13,7 @@ const loaderReducer = (state = initialState, action) => {
 
     case UNSET_LOADING:
       if (newValue > 0) {
-        newValue = newValue - 1;
+        newValue = 0;
       }
       return newValue;
 
