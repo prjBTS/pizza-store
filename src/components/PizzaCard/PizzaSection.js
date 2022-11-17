@@ -34,7 +34,7 @@ const PizzaSection = ({ pizza, onAddToCart }) => {
 							/>
 							&ensp;{pizza.rating}
 						</div>
-						<p style={{ fontWeight: "600" }} > ₹{pizza.price}</p>
+						<p style={{ fontWeight: "600" }} > ${pizza.price}</p>
 						<div className="descriptionSec">
 							{pizza.description}
 						</div>
