@@ -7,7 +7,7 @@ const getAdminStatus = () => {
   
 
 const INITIAL_STATE = {
-    adminData: null || getAdminStatus,
+    adminData: null || getAdminStatus(),
 }
 
 const adminReducer = (state = INITIAL_STATE, action) => {
