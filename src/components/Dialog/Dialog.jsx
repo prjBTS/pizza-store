@@ -17,7 +17,7 @@ import GooglePayButton from "@google-pay/button-react";
 import './Dialog.scss'
 import Gbutton from './Gbutton';
 import { useDispatch } from 'react-redux';
-import { setOrder } from '../../actions/order';
+import { setOrder, getOrder } from '../../actions/order';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -81,6 +81,7 @@ export default function CustomizedDialogs({ openCart, setopenCart }) {
       paymentUsed: "UPI"
     }
     dispatch(setOrder(formData));
+    dispatch(getOrder());
     PizzaStoreContextDispatch({
       type: "setEmptyCart",
     });
