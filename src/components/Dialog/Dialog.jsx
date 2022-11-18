@@ -126,7 +126,7 @@ export default function CustomizedDialogs({ openCart, setopenCart }) {
           }
         </DialogContent>
         <DialogActions style={{ flexDirection: "column", textAlign: "left", justifyContent: "left", alignItems: "left" }}>
-          <Typography variant='h6'>SubTotal: ₹{subTotal}</Typography>
+          <Typography variant='h6'>SubTotal: ${subTotal}</Typography>
           {/* <Button variant="primary" fullWidth style={{ width: "100%", background: "#ff9e00", color: "#fff", margin: "10px" }}>Pay - ${subTotal}</Button> */}
           <Button
             onClick={emptyCart}

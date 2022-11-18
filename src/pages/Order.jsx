@@ -1,9 +1,10 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import NewOrderCard from '../components/OrderCard/NewOrderCard';
 import { Navigate } from 'react-router-dom';
+import {getOrder} from '../actions/order'
 
 
 
@@ -11,6 +12,11 @@ const Order = () => {
     
     const isUser = useSelector((state) => state.auth.authData);
     const orders = useSelector((state) => state.order.orderData);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+       dispatch(getOrder()); 
+    }, [dispatch])
 
     return (
         isUser ?
