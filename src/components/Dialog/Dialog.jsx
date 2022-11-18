@@ -110,7 +110,7 @@ export default function CustomizedDialogs({ openCart, setopenCart }) {
                     <div className='first'>
                       <div className='div1'>
                         <h3>{item.name}</h3>
-                        <h5>{item.quantity} X ₹{item.amount}  :  ₹{item.finalAmount}</h5>
+                        <h5>{item.quantity} X ${item.amount}  :  ${item.finalAmount}</h5>
                         <p>Size: {item.size.size}</p>
                         <p>Toppings: {item.toppings.name} </p>
                       </div>
@@ -166,8 +166,8 @@ export default function CustomizedDialogs({ openCart, setopenCart }) {
                   totalPriceStatus: "FINAL",
                   totalPriceLabel: "Total",
                   totalPrice: subTotal.toString(),
-                  currencyCode: "INR",
-                  countryCode: "IN",
+                  currencyCode: "CAD",
+                  countryCode: "CA",
                 },
                 shippingAddressRequired: true,
                 callbackIntents: ["SHIPPING_ADDRESS", "PAYMENT_AUTHORIZATION"],
