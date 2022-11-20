@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Avatar, Button, Paper, Grid, Typography, Container } from '@mui/material';
 import { useNavigate, Navigate } from 'react-router-dom';
@@ -43,6 +43,11 @@ const SignUp = () => {
     }
   };
 
+  useEffect(() => {
+    if (isError)
+      setError(isError);
+  }, [isError])
+
 
 
   return (
@@ -55,7 +60,6 @@ const SignUp = () => {
           </Avatar>
           <Typography component="h1" variant="h5">{isSignup ? 'Sign up' : 'Sign in'}</Typography>
           {error && <p style={{ color: 'red' }}>{error}</p>}
-          {isError && <p style={{ color: 'red' }}>{error}</p>}
           <form className={classes.form} onSubmit={handleSubmit}>
             <Grid container spacing={2}>
               {isSignup && (
