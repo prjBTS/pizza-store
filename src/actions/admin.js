@@ -4,10 +4,11 @@ import * as api from '../api/index.js';
 export const signin = (formData, navigate) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
-    const { data, error } = await api.adminSignIn(formData);
-    dispatch({ type: ADMIN_AUTH, data, error });
+    const { data } = await api.adminSignIn(formData);
+    dispatch({ type: ADMIN_AUTH, data});
     navigate('/admin/dashboard');
   } catch (error) {
+    dispatch({ type: AUTH, data: null, error: data.message });
     console.log(error);
   }
 };

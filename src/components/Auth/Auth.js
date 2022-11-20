@@ -20,7 +20,7 @@ const SignUp = () => {
   const [error, setError] = useState()
   const dispatch = useDispatch();
   const isUser = useSelector((state) => state.auth.authData);
-  const isError = useSelector((state) => state.auth.error);
+  const isError = useSelector((state) => state.auth.errors);
   const navigate = useNavigate();
   const classes = useStyles();
 
