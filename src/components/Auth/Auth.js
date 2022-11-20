@@ -47,7 +47,7 @@ const SignUp = () => {
     if (isError)
       setError(isError);
   }, [isError])
-
+  console.log("inAuth: ", error, isError, isUser);
 
 
   return (
