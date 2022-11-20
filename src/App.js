@@ -23,8 +23,6 @@ const App = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getItem());
-        if (isUser)
-            dispatch(getOrder());
     }, [dispatch])
 
     return (

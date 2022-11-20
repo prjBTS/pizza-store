@@ -46,13 +46,13 @@ const GroupButton = ({ pizza }) => {
     useEffect(() => {
         let price1, price2;
         if (size === 0) price1 = pizza.price;
-        else if (size === 1) price1 = pizza.price + 50;
-        else price1 = pizza.price + 100;
+        else if (size === 1) price1 = pizza.price + 5;
+        else price1 = pizza.price + 7;
         if (toppings === 0) price2 = 0;
-        else if (toppings === 1) price2 = 50;
-        else if (toppings === 2) price2 = 100;
-        else if (toppings === 3) price2 = 120;
-        else price2 = 150;
+        else if (toppings === 1) price2 = 5;
+        else if (toppings === 2) price2 = 7;
+        else if (toppings === 3) price2 = 10;
+        else price2 = 12;
         setamount(price1 + price2)
     }, [size, toppings])
 
@@ -133,7 +133,7 @@ const GroupButton = ({ pizza }) => {
                             <p style={{ fontWeight: "bold" }}>{pizza.size[0].title}:</p>
                             <RadioGroup aria-label="anonymous" name="anonymous" value={size}>
                                 {pizza.size[0].items.map((item, id) => (
-                                    <FormControlLabel value={id} control={<Radio onChange={() => setSize(id)} />} label={`${item.size}${"      "}${id === 0 ? "(+₹0)" : id === 1 ? "(+₹50)" : "(+₹100)"}`} />
+                                    <FormControlLabel value={id} control={<Radio onChange={() => setSize(id)} />} label={`${item.size}${"      "}${id === 0 ? "(+$0)" : id === 1 ? "(+$5)" : "(+$7)"}`} />
                                 ))}
                             </RadioGroup>
                         </div>
@@ -146,7 +146,7 @@ const GroupButton = ({ pizza }) => {
                                 {pizza.toppings[0].items.map((item, id) => (
                                     <FormControlLabel
                                         control={<Radio onChange={() => setToppings(id)} />}
-                                        label={`${item.name}${"      "}${id === 0 ? "(+₹0)" : id === 1 ? "(+₹50)" : id === 2 ? "(+₹100)" : id === 3 ? "(+₹120)" : "(+₹150)"}`}
+                                        label={`${item.name}${"      "}${id === 0 ? "(+$0)" : id === 1 ? "(+$5)" : id === 2 ? "(+$7)" : id === 3 ? "(+₹10)" : "(+₹12)"}`}
                                         value={id}
                                     />
                                 ))}
@@ -161,7 +161,7 @@ const GroupButton = ({ pizza }) => {
                         fullWidth
                         onClick={addToCart}
                         style={{ width: "80%", background: "#ff9e00", color: "#fff", margin: "10px" }}
-                    >Add to Cart - ₹{amount}</Button>
+                    >Add to Cart - ${amount}</Button>
                 </DialogActions>
             </Dialog>
             <Button onClick={increment} style={{ color: "#fff", border: "none" }} fullWidth>Add</Button>

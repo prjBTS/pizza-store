@@ -161,7 +161,7 @@ export default function CustomizedDialogs({ openCart, setopenCart }) {
                 ],
                 merchantInfo: {
                   merchantId: "12345678901234567890",
-                  merchantName: "Demo Merchant Ozair",
+                  merchantName: "E-Pizza Store",
                 },
                 transactionInfo: {
                   totalPriceStatus: "FINAL",

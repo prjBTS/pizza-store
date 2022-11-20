@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import ProfileCard from '../components/Card/ProfileCard';
 import OrderCard from '../components/Card/OrderCard';
@@ -7,8 +7,9 @@ import PaymentCard from '../components/Card/PaymentCard';
 import Addresscard from '../components/Card/AddressCard';
 
 const Profile = () => {
-    const isUser  = useSelector((state) => state.auth.authData);
-    const orders  = useSelector((state)=> state.order.orderData);
+    const isUser = useSelector((state) => state.auth.authData);
+    const orders = useSelector((state) => state.order.orderData);
+
 
     return (
         isUser ?
@@ -22,9 +23,9 @@ const Profile = () => {
                     minHeight: "200px",
                     flexWrap: "wrap",
                 }}>
-                    <OrderCard orders={orders} />
+                    {/* <OrderCard />
                     <PaymentCard />
-                    <Addresscard />
+                    <Addresscard /> */}
                 </div>
             </>
             :

@@ -19,7 +19,7 @@ const NewOrderCard = ({ allItems }) => {
                                     <p>Toppings: {item.toppings.name} </p>
                                 </div>
                                 <div className='div2'>
-                                    <h5>{item.quantity} X ₹{item.amount}  :  ₹{item.finalAmount}</h5>
+                                    <h5>{item.quantity} X ${item.amount}  :  ${item.finalAmount}</h5>
                                 </div>
                             </div>
                         </div>

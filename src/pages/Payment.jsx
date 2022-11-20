@@ -2,28 +2,35 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { CircularProgress } from '@mui/material';
+import { useSelector, useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { getOrder } from '../actions/order'
 
 const Payment = () => {
+  const isUser = useSelector((state) => state.auth.authData);
+  const orders = useSelector((state) => state.order.orderData);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!orders)
+      dispatch(getOrder());
+  }, [dispatch, orders])
   let na = false;
   return (
-    <div div={{ width: "100%" }}>
-      {
-        na ?
-          <Box sx={{ display: 'flex', justifyContent: "space-around" }}>
-            <CircularProgress color="inherit" />
-          </Box> :
-          <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} lg={9} md={9}>
-                abc
-              </Grid>
-              <Grid item xs={12} lg={3} md={3}>
-                pqr
-              </Grid>
+    isUser ?
+      <div div={{ width: "100%" }}>
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} lg={9} md={9}>
+
             </Grid>
-          </Box>
-      }
-    </div>
+            <Grid item xs={12} lg={3} md={3}>
+              pqr
+            </Grid>
+          </Grid>
+        </Box>
+      </div> :
+      <Navigate to="/auth" />
   )
 }
 

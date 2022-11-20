@@ -4,19 +4,20 @@ import Grid from '@mui/material/Grid';
 import { useSelector, useDispatch } from 'react-redux';
 import NewOrderCard from '../components/OrderCard/NewOrderCard';
 import { Navigate } from 'react-router-dom';
-import {getOrder} from '../actions/order'
+import { getOrder } from '../actions/order'
 
 
 
 const Order = () => {
-    
+
     const isUser = useSelector((state) => state.auth.authData);
     const orders = useSelector((state) => state.order.orderData);
     const dispatch = useDispatch();
 
     useEffect(() => {
-       dispatch(getOrder()); 
-    }, [dispatch])
+        if (!orders)
+            dispatch(getOrder());
+    }, [dispatch, orders])
 
     return (
         isUser ?
