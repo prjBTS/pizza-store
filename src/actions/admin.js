@@ -8,7 +8,7 @@ export const signin = (formData, navigate) => async (dispatch) => {
     dispatch({ type: ADMIN_AUTH, data: data, error: null });
     navigate('/admin/dashboard');
   } catch (error) {
-    dispatch({ type: AUTH, data: null, error: data.message });
+    dispatch({ type: ADMIN_AUTH, data: null, error: error.message });
     console.log(error);
   }
 };
