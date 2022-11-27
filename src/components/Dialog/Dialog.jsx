@@ -132,10 +132,11 @@ export default function CustomizedDialogs({ openCart, setopenCart }) {
           <Button
             onClick={emptyCart}
             variant="primary"
-            style={{ border: "none", backgroundColor: "black", width: "100%" }}
+            style={{ border: "none", backgroundColor: "black", width: "100%", color:"#fff" }}
             fullWidth
             disabled={subTotal === 0 ? true : false}
           >
+            Checkout
             {/* <GooglePayButton
               environment="TEST"
               buttonSizeMode='static'
