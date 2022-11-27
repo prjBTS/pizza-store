@@ -47,15 +47,15 @@ function Home({ pizza }) {
           <Box sx={{ display: 'flex', justifyContent: "space-around" }}>
             <CircularProgress color="inherit" />
           </Box> :
-          <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
+          <Box sx={{ flexGrow: 1,display: 'flex', justifyContent: "space-around" }}>
+            {/* <Grid container spacing={2}> */}
               {/* <Grid item xs={12} lg={9} md={9}> */}
                 <PizzaItems pizzas={pizza} />
               {/* </Grid> */}
               {/* <Grid item xs={12} lg={3} md={3}> */}
                 {/* <PizzaFilter type={type} settype={settype} price={price} setPrice={setPrice} rating={rating} setRating={setRating} /> */}
               {/* </Grid> */}
-            </Grid>
+            {/* </Grid> */}
           </Box>
       }
     </div>
