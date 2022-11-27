@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { useSelector, useDispatch } from 'react-redux';
@@ -30,7 +30,10 @@ const Order = () => {
                                     <h3>All Your Orders:</h3>
                                 </div>
                                 {orders && orders.data.map((allItems, index) =>
-                                    <NewOrderCard allItems={allItems} key={index} />
+                                    <>
+                                        <p></p>
+                                        <NewOrderCard allItems={allItems} key={index} />
+                                    </>
                                 )
                                 }
                             </>

@@ -22,10 +22,10 @@ const Payment = () => {
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={2}>
             <Grid item xs={12} lg={9} md={9}>
-
+              Your Payments:
             </Grid>
             <Grid item xs={12} lg={3} md={3}>
-              pqr
+              All Payments Options:
             </Grid>
           </Grid>
         </Box>

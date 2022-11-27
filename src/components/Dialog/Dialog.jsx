@@ -29,7 +29,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 const BootstrapDialogTitle = (props) => {
-  
+
   const { children, onClose, ...other } = props;
 
   return (
@@ -62,17 +62,17 @@ export default function CustomizedDialogs({ openCart, setopenCart }) {
   const dispatch = useDispatch();
 
   const {
-    state: {cartItem},
+    state: { cartItem },
     PizzaStoreContextDispatch,
   } = React.useContext(PizzaStoreContext);
   const subTotal = cartItem.map(item => item.finalAmount).reduce((prev, curr) => prev + curr, 0);
 
-  
+
   const handleClose = () => {
     setopenCart(false);
   };
 
-  
+
   const emptyCart = () => {
     const formData = {
       items: cartItem,
@@ -136,7 +136,8 @@ export default function CustomizedDialogs({ openCart, setopenCart }) {
             fullWidth
             disabled={subTotal === 0 ? true : false}
           >
-            <GooglePayButton
+            Checkout
+            {/* <GooglePayButton
               environment="TEST"
               buttonSizeMode='static'
               buttonType='order'
@@ -185,7 +186,7 @@ export default function CustomizedDialogs({ openCart, setopenCart }) {
                 return {};
               }}
               existingPaymentMethodRequired="false"
-            />
+            /> */}
           </Button>
         </DialogActions>
       </BootstrapDialog>

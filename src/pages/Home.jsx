@@ -49,12 +49,12 @@ function Home({ pizza }) {
           </Box> :
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} lg={9} md={9}>
-                <PizzaItems pizzas={SortedPizza} />
-              </Grid>
-              <Grid item xs={12} lg={3} md={3}>
-                <PizzaFilter type={type} settype={settype} price={price} setPrice={setPrice} rating={rating} setRating={setRating} />
-              </Grid>
+              {/* <Grid item xs={12} lg={9} md={9}> */}
+                <PizzaItems pizzas={pizza} />
+              {/* </Grid> */}
+              {/* <Grid item xs={12} lg={3} md={3}> */}
+                {/* <PizzaFilter type={type} settype={settype} price={price} setPrice={setPrice} rating={rating} setRating={setRating} /> */}
+              {/* </Grid> */}
             </Grid>
           </Box>
       }
