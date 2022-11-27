@@ -136,7 +136,6 @@ export default function CustomizedDialogs({ openCart, setopenCart }) {
             fullWidth
             disabled={subTotal === 0 ? true : false}
           >
-            Checkout
             {/* <GooglePayButton
               environment="TEST"
               buttonSizeMode='static'

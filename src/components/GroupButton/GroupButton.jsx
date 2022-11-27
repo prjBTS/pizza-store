@@ -146,7 +146,7 @@ const GroupButton = ({ pizza }) => {
                                 {pizza.toppings[0].items.map((item, id) => (
                                     <FormControlLabel
                                         control={<Radio onChange={() => setToppings(id)} />}
-                                        label={`${item.name}${"      "}${id === 0 ? "(+$0)" : id === 1 ? "(+$5)" : id === 2 ? "(+$7)" : id === 3 ? "(+₹10)" : "(+₹12)"}`}
+                                        label={`${item.name}${"      "}${id === 0 ? "(+$0)" : id === 1 ? "(+$5)" : id === 2 ? "(+$7)" : id === 3 ? "(+$10)" : "(+$12)"}`}
                                         value={id}
                                     />
                                 ))}
