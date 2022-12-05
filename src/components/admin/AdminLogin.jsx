@@ -44,7 +44,7 @@ const AdminLogIn = () => {
 
     return
     isUser ? (
-        <Navigate exact to="/" />
+        <Navigate exact to="/profile" />
     ) :
         (is_admin ?
             <Navigate exact to="/admin/dashboard" />

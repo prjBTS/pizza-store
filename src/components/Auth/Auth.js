@@ -87,7 +87,7 @@ const SignUp = () => {
         </Paper >
       </Container >
       : <Navigate to="/profile" />
-  ): <Navigate to="/" />;
+  ): <Navigate to="/order/dashboard" />;
 };
 
 export default SignUp;
