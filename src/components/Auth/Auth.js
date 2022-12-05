@@ -23,7 +23,7 @@ const SignUp = () => {
   const isError = useSelector((state) => state.auth.errors);
   const navigate = useNavigate();
   const classes = useStyles();
-
+  const is_admin = useSelector((state) => state.admin.adminData);
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
   const switchMode = () => {
@@ -50,7 +50,7 @@ const SignUp = () => {
   console.log("inAuth: ", error, isError, isUser);
 
 
-  return (
+  return is_admin ? (
     !isUser ?
       <Container component="main" maxWidth="xs">
         < Paper className={classes.paper} elevation={6} style={{ padding: "8px" }
@@ -87,7 +87,7 @@ const SignUp = () => {
         </Paper >
       </Container >
       : <Navigate to="/profile" />
-  );
+  ): <Navigate to="/" />;
 };
 
 export default SignUp;
