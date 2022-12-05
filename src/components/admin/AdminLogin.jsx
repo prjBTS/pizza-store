@@ -29,7 +29,7 @@ const initialState = {
 const AdminLogIn = () => {
     const is_admin = useSelector((state) => state.admin.adminData);
     const isUser = useSelector((state) => state.auth.authData);
-    console.log("AdminLogin:", is_admin.isUser);
+    console.log("AdminLogin:", is_admin,isUser);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [formData, setformData] = useState(initialState)
