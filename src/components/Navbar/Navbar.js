@@ -113,7 +113,7 @@ const Navbar = () => {
 					&ensp;
 					<Tooltip title="Open settings">
 						<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-							<Avatar alt={isUser.result && isUser.result.name} src="/static/images/avatar/2.jpg" />
+							<Avatar alt={isUser && isUser.result && isUser.result.name} src="/static/images/avatar/2.jpg" />
 						</IconButton>
 					</Tooltip>
 					<Menu
