@@ -49,9 +49,7 @@ const AdminLogIn = () => {
             :
             is_admin ?
                 <Navigate exact to="/admin/dashboard" />
-
                 :
-
                 <ThemeProvider theme={theme}>
                     <Container component="main" maxWidth="xs">
                         <CssBaseline />

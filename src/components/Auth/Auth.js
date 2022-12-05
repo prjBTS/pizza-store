@@ -50,7 +50,7 @@ const SignUp = () => {
   console.log("inAuth: ", error, isError, isUser);
 
 
-  return !is_admin ? (
+  return (!is_admin ? (
     !isUser ?
       <Container component="main" maxWidth="xs">
         < Paper className={classes.paper} elevation={6} style={{ padding: "8px" }
@@ -87,7 +87,7 @@ const SignUp = () => {
         </Paper >
       </Container >
       : <Navigate to="/profile" />
-  ): <Navigate to="/order/dashboard" />;
+  ) : <Navigate to="/order/dashboard" />)
 };
 
 export default SignUp;

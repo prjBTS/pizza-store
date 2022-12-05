@@ -85,6 +85,7 @@ const ItemForm = () => {
         e.preventDefault();
         console.log(formData);
         dispatch({ type: ADD_ITEM, payload: { item: formData } });
+        setFormData(initialState)
     };
     useEffect(() => {
         if (isError)
